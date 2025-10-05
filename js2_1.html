@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P1</title>
+  </head>
+  <body>
+    <h1>Problem 1</h1>
+    <div id="answer"></div>
+    <script>
+      function count(arr, val) {
+        let filtered_arr = arr.filter((item) => item < val);
+        return filtered_arr.length;
+      }
+      function testCount() {
+        let testArray = [3, 55, 30, 28, 9, 12];
+        let testVal = 10;
+        document.getElementById(
+          "answer"
+        ).innerHTML = `Numbers in [${testArray}] less than ${testVal} is <strong>${count(
+          testArray,
+          testVal
+        )}</strong>`;
+      }
+      testCount();
+    </script>
+  </body>
+</html>

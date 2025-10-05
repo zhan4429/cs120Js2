@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P4</title>
+  </head>
+  <body>
+    <h1>Problem 4</h1>
+    <div id="answer"></div>
+    <br />
+    Enter user's name <input type="text" name="username" id="username" /> <br />
+    <br />
+    <input
+      type="button"
+      name="hello"
+      id="hello"
+      value="Hello"
+      onclick="speak('Hello')"
+    />
+    <input
+      type="button"
+      name="bye"
+      id="bye"
+      value="Good Bye"
+      onclick="speak('Good Bye')"
+    />
+    <input
+      type="button"
+      name="greeting"
+      id="greeting"
+      value="Greetings"
+      onclick="speak('Greetings')"
+    />
+    <script>
+      function speak(prefix) {
+        let s = prefix + " " + document.getElementById("username").value;
+        document.getElementById("answer").innerHTML = s;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P3</title>
+  </head>
+  <body>
+    <h1>Problem 3</h1>
+    <div id="answer"></div>
+    <script>
+      const testString = "Pat,Chris,Marlon,Ferncroft,Assunta";
+      let words = testString.split(",");
+      let s = "<ol>";
+      words.forEach(function (word) {
+        s += "<li>" + word + "</li>";
+      });
+      s += "</ol>";
+      document.getElementById("answer").innerHTML = s;
+    </script>
+  </body>
+</html>

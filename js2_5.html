@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P5</title>
+  </head>
+  <body>
+    <h1>Problem 5</h1>
+    <div id="answer"></div>
+    <br />
+    Enter user's name <input type="text" name="username" id="username" /> <br />
+    <br />
+    <input type="button" name="hello" id="hello" value="Hello" />
+    <input type="button" name="bye" id="bye" value="Good Bye" />
+    <input type="button" name="greeting" id="greeting" value="Greetings" />
+    <script>
+      function speak() {
+        let s = this.value + " " + document.getElementById("username").value;
+        document.getElementById("answer").innerHTML = s;
+      }
+      window.onload = function () {
+        document.getElementById("hello").onclick = speak;
+        document.getElementById("bye").onclick = speak;
+        document.getElementById("greeting").onclick = speak;
+      };
+    </script>
+  </body>
+</html>

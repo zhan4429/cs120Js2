@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pec</title>
+    <style> 
+        .hidden {
+        display: none;
+    }
+    #selectedStates ol {
+  margin: 0 30px;
+  padding: 0;
+}
+    </style>
+  </head>
+  <body>
+    <h1>Problem ec</h1>
+    <div style="display: flex; align-items: center;gap: 20px; margin: 20px 20px">
+    <div>
+    <select id="states" name="states" size="10" style="width: 160px">
+    <script>
+        let states = [
+        "California",
+        "Texas",
+        "Florida",
+        "New York",
+        "Illinois",
+        "Pennsylvania",
+        "Ohio",
+        "Georgia",
+        "North Carolina",
+        "Michigan",
+        "New Jersey",
+        "Virginia",
+        "Washington",
+        "Arizona",
+        "Massachusetts",
+        ];
+        states.forEach(function (state) {
+        document.write(
+            '<option value="' + state.toLowerCase() + '">' + state + "</option>"
+        );
+        });
+        document.write("</select>");
+        document.getElementById("states").selectedIndex = 0;
+    </script>
+    </div>
+    <button id="addState" >Add States</button>
+    </div>
+    <div id="selectedStates" style="border: solid; margin: 10px 20px; width:160px; height:auto; min-height:100px">
+    </div>
+    <button id="clearStates" style="margin: 0px 20px" onclick="clearStates()">Clear States</button>
+    <script>
+        let selectStateList = [];
+        document.getElementById("addState").onclick = function () {
+        let selected = document.getElementById("states");
+        let selectedState = selected.options[selected.selectedIndex].text;
+        selectStateList.push(selectedState);
+        let output = document.getElementById("selectedStates");
+       let html = "<ol>";
+        selectStateList.forEach(function(state) {
+            html += "<li>" + state + "</li>";
+        });
+        html += "</ol>";
+        output.innerHTML = html;
+        selected.options[selected.selectedIndex].classList.add("hidden");
+        };
+        
+        function clearStates() {
+        document.getElementById("selectedStates").innerHTML = "";
+        let allOptions = document.getElementById("states").options;
+        for (let i = 0; i < allOptions.length; i++) {
+            allOptions[i].classList.remove("hidden");
+        }
+        document.getElementById("states").selectedIndex = 0;
+        selectStateList = [];
+        }
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P6</title>
+  </head>
+  <body>
+    <h1>Problem 6</h1>
+    <div style="display: flex; align-items: center;gap: 20px; margin: 20px 20px">
+    <div>
+    <select id="states" name="states" size="10" style="width: 150px">
+    <script>
+        let states = [
+        "California",
+        "Texas",
+        "Florida",
+        "New York",
+        "Illinois",
+        "Pennsylvania",
+        "Ohio",
+        "Georgia",
+        "North Carolina",
+        "Michigan",
+        "New Jersey",
+        "Virginia",
+        "Washington",
+        "Arizona",
+        "Massachusetts",
+        ];
+        states.forEach(function (state) {
+        document.write(
+            '<option value="' + state.toLowerCase() + '">' + state + "</option>"
+        );
+        });
+        document.write("</select>");
+        document.getElementById("states").selectedIndex = 0;
+    </script>
+    </div>
+    <button id="addState" >Add States</button>
+    </div>
+    <div id="selectedStates" style="border: solid; margin: 10px 20px; padding: 10px; width:130px; height:auto;min-height:100px">
+    </div>
+    <button id="clearStates" style="margin: 0px 20px" onclick="clearStates()">Clear States</button>
+    <script>
+        document.getElementById("addState").onclick = function () {
+        let selected = document.getElementById("states");
+        let selectedState = selected.options[selected.selectedIndex].text;
+        let output = document.getElementById("selectedStates");
+        if (output.innerHTML === "") {
+            output.innerHTML = selectedState;
+        } else {
+            output.innerHTML +=  selectedState + "<br>";
+        }
+        };
+        function clearStates() {
+        document.getElementById("selectedStates").innerHTML = "";
+        }
+    </script>
+
+  </body>
+</html>
